@@ -34,6 +34,13 @@ abstract public class MyListsPageObject extends MainPageObject {
         );
     }
 
+    public void waitForArticleToAppearByTitle(String articleTitle) {
+        String articleXpath = getFolderXpathByName(articleTitle);
+        this.waitForElementPresent(articleXpath,
+                "Cannot find saved article by title " + articleTitle,
+                15);
+    }
+
     public void waitForArticleToDisappearByTitle(String articleTitle) {
         String articleXpath = getFolderXpathByName(articleTitle);
         this.waitForElementNotPresent(articleXpath,
@@ -42,6 +49,7 @@ abstract public class MyListsPageObject extends MainPageObject {
     }
 
     public void swipeByArticleToDelete(String articleTitle) {
+        this.waitForArticleToAppearByTitle(articleTitle);
         String articleXpath = getSavedArticleXpathByTitle(articleTitle);
         this.swipeElementToLeft(
                 articleXpath,

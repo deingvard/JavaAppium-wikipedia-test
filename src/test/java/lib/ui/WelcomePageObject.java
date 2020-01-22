@@ -2,16 +2,16 @@ package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
 
-public class WelcomePageObject extends MainPageObject {
+abstract public class WelcomePageObject extends MainPageObject {
 
-    private static final String
-            STEP_LEARN_MORE_LINK = "id:Learn more about Wikipedia",
-            STEP_NEW_WAYS_TO_EXPLORE_TEXT = "id:New ways to explore",
-            STEP_ADD_OR_EDIT_PREFERREAD_LANG_LINK = "id:Add or edit preferred languages",
-            STEP_LEARN_MORE_ABOUT_DATA_COLLECTED_LINK = "id:Learn more about data collected",
-            NEXT_LINK = "id:Next",
-            GET_STARTED_BUTTON = "id:Get started",
-            SKIP = "xpath://*[contains(@text,'Skip')]";
+    protected static String
+            STEP_LEARN_MORE_LINK,
+            STEP_NEW_WAYS_TO_EXPLORE_TEXT,
+            STEP_ADD_OR_EDIT_PREFERREAD_LANG_LINK,
+            STEP_LEARN_MORE_ABOUT_DATA_COLLECTED_LINK,
+            NEXT_LINK,
+            GET_STARTED_BUTTON,
+            SKIP;
 
     public WelcomePageObject(AppiumDriver driver) {
         super(driver);
