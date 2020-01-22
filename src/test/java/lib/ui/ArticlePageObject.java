@@ -1,6 +1,7 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import lib.Platform;
 import org.openqa.selenium.WebElement;
 
 
@@ -65,8 +66,16 @@ abstract public class ArticlePageObject extends MainPageObject {
     }
 
     public void swipeToFooter() {
-        swipeUpToFindElement(FOOTER_ELEMENT,
-                "Cannot find the end of the article", 20);
+        if (Platform.getInstance().isAndroid()){
+            swipeUpToFindElement(FOOTER_ELEMENT,
+                    "Cannot find the end of the article",
+                    20);
+        } else {
+            this.swipeUpTillElementAppear(FOOTER_ELEMENT,
+                    "Cannot find article title on the page",
+                    20);
+        }
+
     }
 
 }

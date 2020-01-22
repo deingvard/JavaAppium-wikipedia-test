@@ -7,11 +7,10 @@ abstract public class WelcomePageObject extends MainPageObject {
     protected static String
             STEP_LEARN_MORE_LINK,
             STEP_NEW_WAYS_TO_EXPLORE_TEXT,
-            STEP_ADD_OR_EDIT_PREFERREAD_LANG_LINK,
+            STEP_ADD_OR_EDIT_PREFERRED_LANG_LINK,
             STEP_LEARN_MORE_ABOUT_DATA_COLLECTED_LINK,
             NEXT_LINK,
-            GET_STARTED_BUTTON,
-            SKIP;
+            GET_STARTED_BUTTON;
 
     public WelcomePageObject(AppiumDriver driver) {
         super(driver);
@@ -33,7 +32,7 @@ abstract public class WelcomePageObject extends MainPageObject {
     }
 
     public void waitForAddOrEditPrefferedLangText() {
-        this.waitForElementPresent(STEP_ADD_OR_EDIT_PREFERREAD_LANG_LINK,
+        this.waitForElementPresent(STEP_ADD_OR_EDIT_PREFERRED_LANG_LINK,
                 "Cannot find 'Reading lists with sync' text", 10);
     }
 
@@ -45,12 +44,5 @@ abstract public class WelcomePageObject extends MainPageObject {
     public void waitForLearnMoreAboutDataCollectedText() {
         this.waitForElementPresent(STEP_LEARN_MORE_ABOUT_DATA_COLLECTED_LINK,
                 "Cannot find 'Send anonymous data' text", 10);
-    }
-
-    public void clickSkip() {
-        this.waitForElementAndClick(SKIP,
-                "Cannot find and click 'Skip' button", 5);
-        this.waitForElementPresent(SKIP,
-                "Cannot find search 'Skip' button");
     }
 }

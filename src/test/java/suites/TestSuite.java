@@ -2,7 +2,7 @@ package suites;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import tests.iOS.ArticleTests;
+import tests.ArticleTests;
 import tests.GetStartedTest;
 import tests.SearchTests;
 
