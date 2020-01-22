@@ -52,7 +52,6 @@ public class SearchTests extends CoreTestCase {
     @Test
     public void testCheckSearchInBackgroung(){
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine(searchLineJava);
         searchPageObject.waitForSearchResult("Object-oriented programming language");

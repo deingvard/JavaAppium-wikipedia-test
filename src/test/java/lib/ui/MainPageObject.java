@@ -115,6 +115,25 @@ public class MainPageObject {
         }
     }
 
+    // For android
+    public void swipeElementToLeft(String locator, String errorMessage) {
+        WebElement element = waitForElementPresent(locator, errorMessage, 10);
+
+        int left_x = element.getLocation().getX();
+        int right_x = left_x + element.getSize().getWidth();
+        int upper_y = element.getLocation().getY();
+        int lower_y = upper_y + element.getSize().getHeight();
+        int middle_y = (upper_y + lower_y) / 2;
+
+        TouchAction action = new TouchAction(driver);
+        action
+                .press(right_x, middle_y)
+                .waitAction(300)
+                .moveTo(left_x, middle_y)
+                .release()
+                .perform();
+    }
+
     // For iOS
     public void swipeUpTillElementAppear(String locator, String errorMessage, int maxSwipes){
         int alreadySwiped = 0;
@@ -136,23 +155,7 @@ public class MainPageObject {
         return elementLocationByY < screenSizeByY;
     }
 
-    public void swipeElementToLeft(String locator, String errorMessage) {
-        WebElement element = waitForElementPresent(locator, errorMessage, 10);
 
-        int left_x = element.getLocation().getX();
-        int right_x = left_x + element.getSize().getWidth();
-        int upper_y = element.getLocation().getY();
-        int lower_y = upper_y + element.getSize().getHeight();
-        int middle_y = (upper_y + lower_y) / 2;
-
-        TouchAction action = new TouchAction(driver);
-        action
-                .press(right_x, middle_y)
-                .waitAction(300)
-                .moveTo(left_x, middle_y)
-                .release()
-                .perform();
-    }
 
     private By getLocatorByString(String locatorWithType) {
         String[] exploded_locator = locatorWithType.split(Pattern.quote(":"), 2);

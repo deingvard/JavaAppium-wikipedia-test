@@ -12,7 +12,6 @@ public class GetStartedTest extends CoreTestCase {
     public void testPassThroughWelcome() {
 
         WelcomePageObject welcomePageObject = WelcomePageObjectFactory.get(driver);
-
         welcomePageObject.waitForLearnMoreLink();
         welcomePageObject.clickNextButton();
 

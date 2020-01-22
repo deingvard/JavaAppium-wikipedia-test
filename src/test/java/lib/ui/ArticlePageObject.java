@@ -34,18 +34,18 @@ abstract public class ArticlePageObject extends MainPageObject {
 
         this.waitForElementAndClick(OPTION_CREATE_NEW_BUTTON,
                 "Cannot find 'Create new' button",
-                5
+                10
         );
 
         this.waitForElementAndSendKeys(MY_LIST_NAME_INPUT,
                 nameOfFolder,
                 "Cannot find input to set name of articles folder",
-                5
+                10
         );
 
         this.waitForElementAndClick(MY_LIST_OK_BUTTON,
                 "Cannot press 'OK' button",
-                5
+                10
         );
 
         this.waitForElementAndClick(OPTIONS_BUTTON,
@@ -75,7 +75,6 @@ abstract public class ArticlePageObject extends MainPageObject {
                     "Cannot find article title on the page",
                     20);
         }
-
     }
 
 }
