@@ -71,7 +71,7 @@ public class Platform {
     }
 
     // selecting the desired driver
-    // the general method brings together
+    // the general method for capabilities (two platform)
     // choosing a driver
     public AppiumDriver getDriver() throws Exception {
         URL url = new URL(APPIUM_URL);

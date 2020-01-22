@@ -1,8 +1,9 @@
 package lib.ui.ios;
 import io.appium.java_client.AppiumDriver;
-import lib.ui.SearchPageObject;
+import lib.ui.SearchSteps;
+import org.openqa.selenium.WebElement;
 
-public class iOASearchPageObject extends SearchPageObject {
+public class IOSSearchSteps extends SearchSteps {
 
     static {
         SKIP = "xpath://XCUIElementTypeButton[@name='Skip']";
@@ -14,7 +15,13 @@ public class iOASearchPageObject extends SearchPageObject {
         SEARCH_EMPTY_RESULT_ELEMENT = "xpath://XCUIElementTypeStaticText[@name='No results found']";
     }
 
-    public iOASearchPageObject(AppiumDriver driver) {
+//    private static final String SKIP1 = "xpath://XCUIElementTypeButton[@name='Skip']";
+//
+//    public WebElement getSkip1() {
+//        return waitForElementPresent();
+//    }
+
+    public IOSSearchSteps(AppiumDriver driver) {
         super(driver);
     }
 

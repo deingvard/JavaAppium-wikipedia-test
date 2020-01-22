@@ -2,14 +2,14 @@ package tests;
 
 import lib.CoreTestCase;
 import lib.Platform;
-import lib.ui.ArticlePageObject;
-import lib.ui.MyListsPageObject;
-import lib.ui.NavigationUI;
-import lib.ui.SearchPageObject;
-import lib.ui.factories.ArticlePageObjectFactory;
-import lib.ui.factories.MyListsPageObjectFactory;
+import lib.ui.ArticleSteps;
+import lib.ui.MyListsSteps;
+import lib.ui.NavigationSteps;
+import lib.ui.SearchSteps;
+import lib.ui.factories.ArticleFactory;
+import lib.ui.factories.MyListsFactory;
 import lib.ui.factories.NavigationUIFactory;
-import lib.ui.factories.SearchPageObjectFactory;
+import lib.ui.factories.SearchFactory;
 import org.junit.Test;
 
 public class ArticleTests extends CoreTestCase {
@@ -23,21 +23,21 @@ public class ArticleTests extends CoreTestCase {
         if (Platform.getInstance().isIOS()) {
             return;
         }
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
+        SearchSteps searchSteps = SearchFactory.get(driver);
 
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine(searchLine);
-        searchPageObject.clickByArticleWithSubstring(articleText);
+        searchSteps.initSearchInput();
+        searchSteps.typeSearchLine(searchLine);
+        searchSteps.clickByArticleWithSubstring(articleText);
 
-        ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
-        articlePageObject.addArticleToMyList(nameOfFolder);
+        ArticleSteps articleSteps = ArticleFactory.get(driver);
+        articleSteps.addArticleToMyList(nameOfFolder);
 
-        NavigationUI navigationUI = NavigationUIFactory.get(driver);
-        navigationUI.clickMyListsOnPopUp();
+        NavigationSteps navigationSteps = NavigationUIFactory.get(driver);
+        navigationSteps.clickMyListsOnPopUp();
 
-        MyListsPageObject myListsPageObject = MyListsPageObjectFactory.get(driver);
-        myListsPageObject.openFolderByName(nameOfFolder);
-        myListsPageObject.swipeByArticleToDelete("Java (programming language)");
+        MyListsSteps myListsSteps = MyListsFactory.get(driver);
+        myListsSteps.openFolderByName(nameOfFolder);
+        myListsSteps.swipeByArticleToDelete("Java (programming language)");
     }
 
     @Test
@@ -45,13 +45,13 @@ public class ArticleTests extends CoreTestCase {
         if (Platform.getInstance().isIOS()) {
             return;
         }
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine(searchLine);
-        searchPageObject.clickByArticleWithSubstring(articleText);
+        SearchSteps searchSteps = SearchFactory.get(driver);
+        searchSteps.initSearchInput();
+        searchSteps.typeSearchLine(searchLine);
+        searchSteps.clickByArticleWithSubstring(articleText);
 
-        ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
-        String articleTitle = articlePageObject.getArticleTitle();
+        ArticleSteps articleSteps = ArticleFactory.get(driver);
+        String articleTitle = articleSteps.getArticleTitle();
 
         assertEquals(
                 "We see unexpected title",
@@ -61,13 +61,13 @@ public class ArticleTests extends CoreTestCase {
 
     @Test
     public void testSwipeArticle() {
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine("Funter Bay");
-        searchPageObject.clickByArticleWithSubstring("Bay in Alaska");
+        SearchSteps searchSteps = SearchFactory.get(driver);
+        searchSteps.initSearchInput();
+        searchSteps.typeSearchLine("Funter Bay");
+        searchSteps.clickByArticleWithSubstring("Bay in Alaska");
 
-        ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
-        articlePageObject.waitForTitleElement();
-        articlePageObject.swipeToFooter();
+        ArticleSteps articleSteps = ArticleFactory.get(driver);
+        articleSteps.waitForTitleElement();
+        articleSteps.swipeToFooter();
     }
 }

@@ -1,9 +1,9 @@
 package lib.ui.android;
 
 import io.appium.java_client.AppiumDriver;
-import lib.ui.SearchPageObject;
+import lib.ui.SearchSteps;
 
-public class AndroidSearchPageObject extends SearchPageObject {
+public class AndroidSearchSteps extends SearchSteps {
 
     static {
         SEARCH_INIT_ELEMENT = "xpath://*[contains(@text,'Search Wikipedia')]";
@@ -16,7 +16,7 @@ public class AndroidSearchPageObject extends SearchPageObject {
         SKIP = "id:org.wikipedia:id/fragment_onboarding_skip_button";
     }
 
-    public AndroidSearchPageObject(AppiumDriver driver) {
+    public AndroidSearchSteps(AppiumDriver driver) {
         super(driver);
     }
 }

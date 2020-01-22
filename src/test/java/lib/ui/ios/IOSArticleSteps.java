@@ -1,9 +1,9 @@
 package lib.ui.ios;
 
 import io.appium.java_client.AppiumDriver;
-import lib.ui.ArticlePageObject;
+import lib.ui.ArticleSteps;
 
-public class iOSArticlePageObject extends ArticlePageObject {
+public class IOSArticleSteps extends ArticleSteps {
 
     static {
         TITLE = "xpath://XCUIElementTypeStaticText[@name='Funter Bay']";
@@ -16,7 +16,7 @@ public class iOSArticlePageObject extends ArticlePageObject {
         FOOTER_ELEMENT = "id:View article in browser";
     }
 
-    public iOSArticlePageObject(AppiumDriver driver) {
+    public IOSArticleSteps(AppiumDriver driver) {
         super(driver);
     }
 }

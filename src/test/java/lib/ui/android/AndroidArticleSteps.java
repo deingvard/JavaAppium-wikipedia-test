@@ -1,9 +1,9 @@
 package lib.ui.android;
 
 import io.appium.java_client.AppiumDriver;
-import lib.ui.ArticlePageObject;
+import lib.ui.ArticleSteps;
 
-public class AndroidArticlePageObject extends ArticlePageObject {
+public class AndroidArticleSteps extends ArticleSteps {
 
     static {
         TITLE = "xpath://*[@resource-id='pagelib_edit_section_title_description']";
@@ -16,7 +16,7 @@ public class AndroidArticlePageObject extends ArticlePageObject {
         FOOTER_ELEMENT = "xpath://*[@text='View page in browser']";
     }
 
-    public AndroidArticlePageObject(AppiumDriver driver) {
+    public AndroidArticleSteps(AppiumDriver driver) {
         super(driver);
     }
 }

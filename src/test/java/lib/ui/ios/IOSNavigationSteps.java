@@ -1,15 +1,15 @@
 package lib.ui.ios;
 
 import io.appium.java_client.AppiumDriver;
-import lib.ui.NavigationUI;
+import lib.ui.NavigationSteps;
 
-public class iOSNavigationUI extends NavigationUI {
+public class IOSNavigationSteps extends NavigationSteps {
 
     static {
         MY_LISTS_LINK = "id:Saved";
     }
 
-    public iOSNavigationUI(AppiumDriver driver) {
+    public IOSNavigationSteps(AppiumDriver driver) {
         super(driver);
     }
 }

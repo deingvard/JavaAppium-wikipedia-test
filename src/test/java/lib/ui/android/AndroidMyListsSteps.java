@@ -1,9 +1,9 @@
 package lib.ui.android;
 
 import io.appium.java_client.AppiumDriver;
-import lib.ui.MyListsPageObject;
+import lib.ui.MyListsSteps;
 
-public class AndroidMyListsPageObject extends MyListsPageObject {
+public class AndroidMyListsSteps extends MyListsSteps {
 
     static {
         FOLDER_BY_NAME_TPL = "xpath://*[@text='{FOLDER_NAME}']";
@@ -11,7 +11,7 @@ public class AndroidMyListsPageObject extends MyListsPageObject {
         NO_THANKS_BUTTON = "id:android:id/button2";
     }
 
-    public AndroidMyListsPageObject(AppiumDriver driver) {
+    public AndroidMyListsSteps(AppiumDriver driver) {
         super(driver);
     }
 

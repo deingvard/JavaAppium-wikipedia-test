@@ -1,15 +1,15 @@
 package lib.ui.android;
 
 import io.appium.java_client.AppiumDriver;
-import lib.ui.NavigationUI;
+import lib.ui.NavigationSteps;
 
-public class AndroidNavigationUI extends NavigationUI {
+public class AndroidNavigationSteps extends NavigationSteps {
 
     static {
         MY_LISTS_LINK = "id:page_action_overflow_reading_lists";
     }
 
-    public AndroidNavigationUI(AppiumDriver driver) {
+    public AndroidNavigationSteps(AppiumDriver driver) {
         super(driver);
     }
 }

@@ -1,8 +1,8 @@
 package tests;
 
 import lib.CoreTestCase;
-import lib.ui.SearchPageObject;
-import lib.ui.factories.SearchPageObjectFactory;
+import lib.ui.SearchSteps;
+import lib.ui.factories.SearchFactory;
 import org.junit.Test;
 
 public class SearchTests extends CoreTestCase {
@@ -11,29 +11,29 @@ public class SearchTests extends CoreTestCase {
 
     @Test
     public void testSearch() {
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine(searchLineJava);
-        searchPageObject.waitForSearchResult("Object-oriented programming language");
+        SearchSteps searchSteps = SearchFactory.get(driver);
+        searchSteps.initSearchInput();
+        searchSteps.typeSearchLine(searchLineJava);
+        searchSteps.waitForSearchResult("Object-oriented programming language");
     }
 
     @Test
     public void testCancel() {
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine(searchLineJava);
-        searchPageObject.waitForCancelButtonToAppear();
-        searchPageObject.clickCancelSearch();
-        searchPageObject.waitForCancelButtonToDisappear();
+        SearchSteps searchSteps = SearchFactory.get(driver);
+        searchSteps.initSearchInput();
+        searchSteps.typeSearchLine(searchLineJava);
+        searchSteps.waitForCancelButtonToAppear();
+        searchSteps.clickCancelSearch();
+        searchSteps.waitForCancelButtonToDisappear();
     }
 
     @Test
     public void testAmountOfNotEmptySearch() {
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
+        SearchSteps searchSteps = SearchFactory.get(driver);
+        searchSteps.initSearchInput();
         String searchLine = "Mobile app development";
-        searchPageObject.typeSearchLine(searchLine);
-        int amountOfSearchResults = searchPageObject.getAmountOfFoundArticles();
+        searchSteps.typeSearchLine(searchLine);
+        int amountOfSearchResults = searchSteps.getAmountOfFoundArticles();
         assertTrue(
                 "We found too few results!",
                 amountOfSearchResults > 0
@@ -42,32 +42,32 @@ public class SearchTests extends CoreTestCase {
 
     @Test
     public void testAmountOfEmptySearch() {
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
+        SearchSteps searchSteps = SearchFactory.get(driver);
+        searchSteps.initSearchInput();
         String searchLine = "vdgsbsfg435425334dvgfbsfnfhjnty";
-        searchPageObject.typeSearchLine(searchLine);
-        searchPageObject.waitForEmptyResultsLabel();
-        searchPageObject.assertThereIsNoResultOfSearch();
+        searchSteps.typeSearchLine(searchLine);
+        searchSteps.waitForEmptyResultsLabel();
+        searchSteps.assertThereIsNoResultOfSearch();
     }
 
     @Test
     public void testCheckSearchInBackgroung(){
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine(searchLineJava);
-        searchPageObject.waitForSearchResult("Object-oriented programming language");
+        SearchSteps searchSteps = SearchFactory.get(driver);
+        searchSteps.initSearchInput();
+        searchSteps.typeSearchLine(searchLineJava);
+        searchSteps.waitForSearchResult("Object-oriented programming language");
         this.backgroundApp(2);
-        searchPageObject.waitForSearchResult("Object-oriented programming language");
+        searchSteps.waitForSearchResult("Object-oriented programming language");
     }
 
     @Test
     public void testChangeScreenOrientationOnSearchResults() {
-        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine(searchLineJava);
+        SearchSteps searchSteps = SearchFactory.get(driver);
+        searchSteps.initSearchInput();
+        searchSteps.typeSearchLine(searchLineJava);
         this.rotateAndHideKeyboardScreenLandscape();
-        searchPageObject.waitForSearchResult("Object-oriented programming language");
+        searchSteps.waitForSearchResult("Object-oriented programming language");
         this.rotateAndHideKeyboardScreenPortrait();
-        searchPageObject.waitForSearchResult("Object-oriented programming language");
+        searchSteps.waitForSearchResult("Object-oriented programming language");
     }
 }

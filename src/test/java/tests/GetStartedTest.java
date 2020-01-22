@@ -1,7 +1,7 @@
 package tests;
 
 import lib.CoreTestCase;
-import lib.ui.WelcomePageObject;
+import lib.ui.WelcomeSteps;
 import lib.ui.factories.WelcomePageObjectFactory;
 import org.junit.Test;
 
@@ -9,18 +9,18 @@ public class GetStartedTest extends CoreTestCase {
 
     @Test
     public void testPassThroughWelcome() {
-        WelcomePageObject welcomePageObject = WelcomePageObjectFactory.get(driver);
-        welcomePageObject.waitForLearnMoreLink();
-        welcomePageObject.clickNextButton();
+        WelcomeSteps welcomeSteps = WelcomePageObjectFactory.get(driver);
+        welcomeSteps.waitForLearnMoreLink();
+        welcomeSteps.clickNextButton();
 
-        welcomePageObject.waitForNewWayToExploreText();
-        welcomePageObject.clickNextButton();
+        welcomeSteps.waitForNewWayToExploreText();
+        welcomeSteps.clickNextButton();
 
-        welcomePageObject.waitForAddOrEditPreferredLangText();
-        welcomePageObject.clickNextButton();
+        welcomeSteps.waitForAddOrEditPreferredLangText();
+        welcomeSteps.clickNextButton();
 
-        welcomePageObject.waitForLearnMoreAboutDataCollectedText();
-        welcomePageObject.clickGetStartedButton();
+        welcomeSteps.waitForLearnMoreAboutDataCollectedText();
+        welcomeSteps.clickGetStartedButton();
     }
 
 }

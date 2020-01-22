@@ -1,9 +1,9 @@
 package lib.ui.ios;
 
 import io.appium.java_client.AppiumDriver;
-import lib.ui.WelcomePageObject;
+import lib.ui.WelcomeSteps;
 
-public class iOSWelcomePageObject extends WelcomePageObject {
+public class IOSWelcomeSteps extends WelcomeSteps {
 
     static {
         STEP_LEARN_MORE_LINK = "id:Learn more about Wikipedia";
@@ -14,7 +14,7 @@ public class iOSWelcomePageObject extends WelcomePageObject {
         GET_STARTED_BUTTON = "id:Get started";
     }
 
-    public iOSWelcomePageObject(AppiumDriver driver){
+    public IOSWelcomeSteps(AppiumDriver driver){
         super(driver);
     }
 

@@ -1,9 +1,9 @@
 package lib.ui.android;
 
 import io.appium.java_client.AppiumDriver;
-import lib.ui.WelcomePageObject;
+import lib.ui.WelcomeSteps;
 
-public class AndroidWelcomePageObject extends WelcomePageObject {
+public class AndroidWelcomeSteps extends WelcomeSteps {
 
     static {
         STEP_LEARN_MORE_LINK = "id:org.wikipedia:id/fragment_onboarding_skip_button";
@@ -14,7 +14,7 @@ public class AndroidWelcomePageObject extends WelcomePageObject {
         GET_STARTED_BUTTON = "xpath://*[@text='GET STARTED']";
     }
 
-    public AndroidWelcomePageObject(AppiumDriver driver){
+    public AndroidWelcomeSteps(AppiumDriver driver){
         super(driver);
     }
 
