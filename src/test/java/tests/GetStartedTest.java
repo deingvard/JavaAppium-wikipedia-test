@@ -16,7 +16,7 @@ public class GetStartedTest extends CoreTestCase {
         welcomePageObject.waitForNewWayToExploreText();
         welcomePageObject.clickNextButton();
 
-        welcomePageObject.waitForAddOrEditPrefferedLangText();
+        welcomePageObject.waitForAddOrEditPreferredLangText();
         welcomePageObject.clickNextButton();
 
         welcomePageObject.waitForLearnMoreAboutDataCollectedText();

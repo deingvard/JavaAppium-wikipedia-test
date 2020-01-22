@@ -8,7 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.URL;
 
 // choosing a platform
-// singleton pattern, object created once
+// singleton pattern, object created once, instance cannot create
 public class Platform {
     private static final String PLATFORM_IOS = "iOS";
     private static final String PLATFORM_ANDROID = "android";

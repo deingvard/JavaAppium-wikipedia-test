@@ -31,7 +31,7 @@ abstract public class WelcomePageObject extends MainPageObject {
                 "Cannot find and click 'Next' link", 10);
     }
 
-    public void waitForAddOrEditPrefferedLangText() {
+    public void waitForAddOrEditPreferredLangText() {
         this.waitForElementPresent(STEP_ADD_OR_EDIT_PREFERRED_LANG_LINK,
                 "Cannot find 'Reading lists with sync' text", 10);
     }
