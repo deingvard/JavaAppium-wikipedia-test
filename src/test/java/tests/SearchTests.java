@@ -6,6 +6,7 @@ import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
 public class SearchTests extends CoreTestCase {
+
     private static final String searchLineJava = "Java";
 
     @Test

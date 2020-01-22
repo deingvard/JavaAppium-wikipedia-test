@@ -13,8 +13,10 @@ import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
 public class ArticleTests extends CoreTestCase {
+
     private static final String nameOfFolder = "Learning programming";
     private static final String searchLine = "Java";
+    private static final String articleText = "Object-oriented programming language";
 
     @Test
     public void testSaveFirstArticleToMyList() {
@@ -25,7 +27,7 @@ public class ArticleTests extends CoreTestCase {
 
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine(searchLine);
-        searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
+        searchPageObject.clickByArticleWithSubstring(articleText);
 
         ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
         articlePageObject.addArticleToMyList(nameOfFolder);
@@ -44,17 +46,16 @@ public class ArticleTests extends CoreTestCase {
             return;
         }
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine(searchLine);
-        searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
+        searchPageObject.clickByArticleWithSubstring(articleText);
 
         ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
         String articleTitle = articlePageObject.getArticleTitle();
 
         assertEquals(
                 "We see unexpected title",
-                "Object-oriented programming language",
+                articleText,
                 articleTitle);
     }
 
