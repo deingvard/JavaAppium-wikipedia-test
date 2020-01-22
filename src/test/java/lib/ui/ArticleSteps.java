@@ -5,7 +5,7 @@ import lib.Platform;
 import org.openqa.selenium.WebElement;
 
 
-abstract public class ArticleSteps extends MainPageObject {
+abstract public class ArticleSteps extends CommonHelper {
 
     protected static String
             TITLE,

@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumDriver;
 
 
 // will not create a class object
-abstract public class SearchSteps extends MainPageObject {
+abstract public class SearchSteps extends CommonHelper {
 
     protected static String
             SEARCH_INIT_ELEMENT,

@@ -2,7 +2,7 @@ package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
 
-abstract public class WelcomeSteps extends MainPageObject {
+abstract public class WelcomeSteps extends CommonHelper {
 
     protected static String
             STEP_LEARN_MORE_LINK,

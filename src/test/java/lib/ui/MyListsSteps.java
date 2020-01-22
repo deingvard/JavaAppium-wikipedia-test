@@ -2,7 +2,7 @@ package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
 
-abstract public class MyListsSteps extends MainPageObject {
+abstract public class MyListsSteps extends CommonHelper {
 
     protected static String
             FOLDER_BY_NAME_TPL,

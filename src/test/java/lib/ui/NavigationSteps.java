@@ -2,7 +2,7 @@ package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
 
-abstract public class NavigationSteps extends MainPageObject {
+abstract public class NavigationSteps extends CommonHelper {
 
     protected static String MY_LISTS_LINK;
 
