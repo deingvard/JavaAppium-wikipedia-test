@@ -20,6 +20,20 @@ public class MainPageObject {
         this.driver = driver;
     }
 
+    private By getLocatorByString(String locatorWithType) {
+        String[] exploded_locator = locatorWithType.split(Pattern.quote(":"), 2);
+        String by_type = exploded_locator[0];
+        String locator = exploded_locator[1];
+
+        if (by_type.equals("xpath")) {
+            return By.xpath(locator);
+        } else if (by_type.equals("id")) {
+            return By.id(locator);
+        } else {
+            throw new IllegalArgumentException("Cannot get type of locator. Locator: " + locatorWithType);
+        }
+    }
+
     public WebElement waitForElementPresent(String locator, String errorMessage, long timeoutInSeconds) {
         By by = this.getLocatorByString(locator);
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -154,21 +168,4 @@ public class MainPageObject {
         int screenSizeByY = driver.manage().window().getSize().getHeight();
         return elementLocationByY < screenSizeByY;
     }
-
-
-
-    private By getLocatorByString(String locatorWithType) {
-        String[] exploded_locator = locatorWithType.split(Pattern.quote(":"), 2);
-        String by_type = exploded_locator[0];
-        String locator = exploded_locator[1];
-
-        if (by_type.equals("xpath")) {
-            return By.xpath(locator);
-        } else if (by_type.equals("id")) {
-            return By.id(locator);
-        } else {
-            throw new IllegalArgumentException("Cannot get type of locator. Locator: " + locatorWithType);
-        }
-    }
-
 }
