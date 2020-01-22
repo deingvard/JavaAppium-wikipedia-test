@@ -12,7 +12,7 @@ public class iOSArticlePageObject extends ArticlePageObject {
         ADD_TO_MY_LIST_OVERLAY = "id:Add “Java (programming language)” to a reading list?";
         MY_LIST_NAME_INPUT = "id:reading list title";
         MY_LIST_OK_BUTTON = "id:Create reading list";
-        OPTION_CREATE_NEW_BUTTON = "xpath://XCUIElementTypeButton[@name=\"Create a new list\"]";
+        OPTION_CREATE_NEW_BUTTON = "xpath://XCUIElementTypeButton[@name='Create a new list']";
         FOOTER_ELEMENT = "id:View article in browser";
     }
 
